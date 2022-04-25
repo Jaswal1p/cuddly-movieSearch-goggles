@@ -1,3 +1,5 @@
+// create faker data to use during development 
+
 const bcrypt = require('bcrypt');
 const faker = require('faker');
 const db = require('../config/connection');
