@@ -30,7 +30,7 @@ db.once('open', async () => {
     const voteCount = faker.random.number();
     const title = faker.commerce.productName();
     const overview = faker.lorem.words(Math.round(Math.random() * 20) +1);
-    const releaseDate = faker.data.past();
+    const releaseDate = faker.date.past();
     const poster = faker.image.imageUrl();
     const trailer = faker.image.imageUrl();
 
