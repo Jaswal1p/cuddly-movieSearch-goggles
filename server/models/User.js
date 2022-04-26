@@ -20,19 +20,31 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    thoughts: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Thought'
-      }
-    ],
     friends: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
       }
-    ]
+    ],
+    likedMovies: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Movie',
+      validate: (arr) => {
+        return arr.filter(v => v === null).length === 0;
+      }
+    }],
+    dislikedMovies: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Movie',
+      validate: (arr) => {
+        return arr.filter(v => v === null).length === 0;
+      }
+    }], 
+
   },
+
+  // Now this needs to be set to be used in the following virtual
+
   {
     toJSON: {
       virtuals: true
@@ -54,10 +66,6 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
-
-userSchema.virtual('friendCount').get(function() {
-  return this.friends.length;
-});
 
 const User = model('User', userSchema);
 
