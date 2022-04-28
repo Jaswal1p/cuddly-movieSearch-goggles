@@ -1,0 +1,32 @@
+{
+  "name": "cuddly-moviesearch-goggles",
+  "version": "1.0.0",
+  "description": "This is first commit in develop branch.",
+  "main": "server.js",
+  "scripts": {
+    "start": "server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaswal1p/cuddly-movieSearch-goggles.git"
+  },
+  "author": "Jaswal1p",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaswal1p/cuddly-movieSearch-goggles/issues"
+  },
+  "homepage": "https://github.com/Jaswal1p/cuddly-movieSearch-goggles#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.1",
+    "socket.io": "^4.5.0"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "nodemon": "^2.0.15"
+  }
+}
